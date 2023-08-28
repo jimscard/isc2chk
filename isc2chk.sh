@@ -1,4 +1,5 @@
 #!/bin/bash
+# This code snippet is a bash script that takes a person's name and (ISC)2 ID number as input and checks their status using the (ISC)2 Member verification page. The script sends a POST request to the API endpoint with the provided information
 # ---isc2chk.sh
 # Script takes person's name and (ISC)2 ID number and checks their status
 # using the (ISC)2 Member verification page. The results aren't formatted, but
@@ -11,9 +12,9 @@
 #
 # Script by Jim Scardelis u/jimscard
 #
-JQ=$(which jq)    #get location of jq if it's installed.
+JQ=$(which jq)	#get location of jq if it's installed.
 
-case "$#" in			# Check how many parameters were supplied
+case "$#" in	# Check how many parameters were supplied
 3)				# 3 is the max, they gave the first name too
 	fname=$1
 	lname=$2
@@ -25,7 +26,7 @@ case "$#" in			# Check how many parameters were supplied
 	id=$2
 	;;
 *)
-	echo Usage: "${0##*/}" [fname] lname ISC2ID
+	echo "Usage: \"${0##*/}\" [fname] lname ISC2ID"
 	exit 1
 	;;
 esac
